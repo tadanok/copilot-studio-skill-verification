@@ -13,7 +13,7 @@ Qiita の連載 (全 4 回) の詳細を、このリポジトリで補ってい�
 検証の記録と結果は、連載の進行に合わせて追加します。
 
 1. [第 1 回 設計とキット](https://qiita.com/tadanok/items/df45c82b3cb3348a94f3)
-2. 第 2 回 検証 A から E (公開後にリンクします)
+2. [第 2 回 検証 A から E](https://qiita.com/tadanok/items/754a5097ea26418227f8)
 3. 第 3 回 検証 F (公開後にリンクします)
 4. 第 4 回 運用に持ち込むなら (公開後にリンクします)
 
@@ -23,17 +23,20 @@ Qiita の連載 (全 4 回) の詳細を、このリポジトリで補ってい�
 | --- | --- | --- |
 | `手順書.md` | 検証の進め方 (図入り) | 最初に読む |
 | `キットの補足.md` | アップロード用ファイルの扱いと、原稿からの作り直しかた | キットを直すとき |
-| `README-versions.md` | スキルの版の対応表 | どの版を使うかの確認 |
+| `README-versions.md` | スキルの版 v1 から v4 の対応表 | どの版を使うかの確認 |
 | `agents/*/instructions.md` | ハブと 3 部門の指示 | フェーズ 1 と検証 D |
 | `agents/*/description.md` | 接続エージェントの説明文 | フェーズ 1 と検証 D |
 | `skills/` | 共通スキル 3 つの原稿。v1 (差し替え前) | 正本の管理とレビュー |
 | `skills-v2/` | v2。検証 A から D で使用 | 正本の管理とレビュー |
-| `upload/v1/`、`upload/v2/` | 各版をスキル名の `.md` にしたもの | アップロードはここから |
+| `skills-v3/` | v3。E-01 と E-03 の途中経過。`hr-tone` を含む | 正本の管理とレビュー |
+| `skills-v4/` | v4。運用で使う版。`hr-tone` は廃止 | 正本の管理とレビュー |
+| `upload/v1/` から `upload/v4/` | 各版をスキル名の `.md` にしたもの | アップロードはここから |
 | `knowledge/hr/`、`knowledge/soumu/`、`knowledge/it/` | SharePoint に置く文書 (docx、pdf) | フェーズ 0 と検証 D |
 | `knowledge/_xlsx-参考/` | 同じ表を xlsx にしたもの | 登録しない |
 | `knowledge-src/` | 文書の原稿 (Markdown と CSV) | 文書を直すとき |
-| `tests/検証テストセットと記録シート.xlsx` | 質問、変更依頼、記録欄、判定表 (空のブック) | 全フェーズ |
+| `tests/検証テストセットと記録シート.xlsx` | 質問、変更依頼、記録欄、判定表 (検証 A から E の記録入り) | 全フェーズ |
 | `tests/testset.csv`、`tests/change-requests.csv` | テストセットと変更依頼の原稿 | テストセットを直すとき |
+| `tests/records/` | 検証 A から E の詳細記録 | 結果の見直し |
 | `scripts/` | 原稿から文書、検証ブック、アップロード用ファイルを作り直すスクリプト | キットを直すとき |
 | `figures/` | 実画面のスクリーンショット | 手順の確認 |
 
@@ -41,7 +44,7 @@ Qiita の連載 (全 4 回) の詳細を、このリポジトリで補ってい�
 
 1. `手順書.md` の「この検証で確かめること」と「前提」を読みます。
 2. 「フェーズ 0: 準備」から順に進めます。スキルは `upload/` の各版のフォルダーからドロップします。
-3. 結果は `tests/検証テストセットと記録シート.xlsx` に記録します。
+3. 結果は `tests/検証テストセットと記録シート.xlsx` に記録し、`tests/records/` の記録と見比べます。
 
 ## 前提と課金の注意
 
@@ -57,9 +60,9 @@ Qiita の連載 (全 4 回) の詳細を、このリポジトリで補ってい�
 | 対象 | ライセンス |
 | --- | --- |
 | `scripts/` | [MIT](LICENSE) |
-| `skills/`、`skills-v2/`、`upload/` (SKILL.md) | [MIT](LICENSE) |
+| `skills/` から `skills-v4/`、`upload/` (SKILL.md) | [MIT](LICENSE) |
 | `agents/` (指示と説明文) | [MIT](LICENSE) |
-| `手順書.md`、`README.md`、`キットの補足.md`、`README-versions.md`、`tests/` (テストセットと記録シート) | [CC BY 4.0](LICENSE-docs) |
+| `手順書.md`、`README.md`、`キットの補足.md`、`README-versions.md`、`tests/` (テストセット、記録シート、記録) | [CC BY 4.0](LICENSE-docs) |
 | `knowledge/`、`knowledge-src/` (架空の文書) | [CC BY 4.0](LICENSE-docs) |
 | `figures/` (スクリーンショット) | **対象外**。Microsoft の製品画面です。Used with permission from Microsoft. |
 

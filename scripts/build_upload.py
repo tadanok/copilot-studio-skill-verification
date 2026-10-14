@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""skills/ と skills-v2/ の各版から、アップロード用のファイルを作る。
+"""skills/ から skills-v4/ までの各版から、アップロード用のファイルを作る。
 
 Copilot Studio の [スキルの追加] が受け付けるのは、YAML フロントマターと
 Markdown の指示を持つ .md か、SKILL.md を含む zip。今回のスキルは SKILL.md
@@ -12,7 +12,7 @@ zip は出さない。補助ファイルを同梱する必要が出たら、こ�
 SKILL.md を直下に入れた zip を作る。
 
 各版は 1 つの完全な一式です。前の版から変わっていないスキルも含めて出すので、
-その版だけを見てドロップできます。
+その版だけを見てドロップできます。運用で使うのは v4 です。
 
 使い方: python3 scripts/build_upload.py
 """
@@ -23,6 +23,8 @@ ROOT = Path(__file__).resolve().parent.parent
 JOBS = (
     ("v1", "skills"),
     ("v2", "skills-v2"),
+    ("v3", "skills-v3"),
+    ("v4", "skills-v4"),
 )
 
 
