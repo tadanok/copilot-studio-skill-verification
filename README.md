@@ -10,12 +10,12 @@ Microsoft Copilot Studio (GitHub Copilot ハーネス) で、エージェント�
 ## 対応する記事
 
 Qiita の連載 (全 4 回) の詳細を、このリポジトリで補っています。
-検証の記録と結果は、連載の進行に合わせて追加します。
+連載は全 4 回で完結しました。検証の記録と結果は、すべてこのリポジトリにあります。
 
 1. [第 1 回 設計とキット](https://qiita.com/tadanok/items/df45c82b3cb3348a94f3)
 2. [第 2 回 検証 A から E](https://qiita.com/tadanok/items/754a5097ea26418227f8)
 3. [第 3 回 検証 F と G](https://qiita.com/tadanok/items/535d23fc1aaf9fd8cdc8)
-4. 第 4 回 運用に持ち込むなら (公開後にリンクします)
+4. [第 4 回 運用に持ち込むなら (最終回)](https://qiita.com/tadanok/items/5c71e00a214847ca891a)
 
 ## 中身
 

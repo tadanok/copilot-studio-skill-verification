@@ -9,7 +9,6 @@
 
 > [!NOTE]
 > 画面の表示 (推論カードの **Used tool** の中身、[履歴] の項目など) は 2026 年 10 月時点のものです。
-> 費用の金額は、第 4 回の公開に合わせてこの記録に追加します。
 
 ## G-1 ハブのプレビューは、部門の下書きと公開版のどちらを呼ぶか
 
@@ -124,7 +123,7 @@
 
 ### App Insights で見えたもの
 
-Power Platform 管理センターのデータのエクスポートで、環境のテレメトリを Application Insights に送りました ([Environment-level telemetry with Application Insights (preview) (英語)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-environment-level-agent-telemetry))。
+Power Platform 管理センターのデータのエクスポートで、環境のテレメトリを Application Insights に送りました ([Application Insightsを用いた環境レベルのテレメトリ(プレビュー)](https://learn.microsoft.com/ja-jp/microsoft-copilot-studio/advanced-environment-level-agent-telemetry))。
 マネージド環境が前提です。
 エクスポートを作ってから 20 分から 40 分後の会話は届かず、約 27 時間後に [プレビュー] で投げた 2 問の分が届きました。
 
@@ -161,6 +160,33 @@ dependencies
     resultHasSerial = tostring(cd['gen_ai.tool.call.result']) contains 'F-1-7781',
     outputHasSerial = tostring(cd['gen_ai.output.messages']) contains 'F-1-7781'
 ```
+
+## 費用
+
+検証 A から F とは別の検証用テナントの Azure のコスト分析の値 (税抜き) です。
+日付は UTC です。
+
+| 日 (UTC) | 金額 | 主な中身 |
+| --- | --- | --- |
+| 2026-10-18 | 14.17 円 | G-1 (公開の確認) など |
+| 2026-10-19 | 2,938.31 円 | G-2 (F の再現)、G-3 (対照)、[評価] 4 回 |
+| 2026-10-20 | 179.61 円 | App Insights の確認のための [プレビュー] 2 問 |
+| 計 | **3,132.09 円** | |
+
+- 費用は全額が Copilot Studio のメーターです。Application Insights のデータを受け取る Log Analytics は 0 円でした。
+- 検証 A から G の合計は **9,015.62 円**です (A から E 4,734.99 円、F 1,148.54 円、G 3,132.09 円)。
+
+### クレジットの見え方
+
+ハブの画面に出るクレジットには、接続先の部門エージェントの消費が含まれません。
+
+| 画面 | 表示されたクレジット | 部門エージェントの [履歴] での消費 |
+| --- | --- | --- |
+| ハブの [履歴] (ハブ経由の 1 回) | 6 から 21 | 同じ 1 回で 22 から 48 |
+| [評価] の「使用したクレジット」(4 回の計) | 44 | チャネル「評価」のセッションで計約 577 |
+
+ハブの画面の数字だけで見積もったため、見込みを大きく外しました。
+接続エージェントの構成では、部門エージェントの [履歴] の数字も足して見積もります。
 
 ## 判定
 
